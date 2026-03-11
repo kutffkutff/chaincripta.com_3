@@ -112,6 +112,7 @@ jobs:
         run: Start-Sleep -Seconds 120
 
       - name: Restart workflow
+        if: always()
         run: |
           Invoke-RestMethod `
             -Method POST `
@@ -119,6 +120,7 @@ jobs:
             -Headers @{
               Authorization = "Bearer $env:GITHUB_TOKEN"
               Accept = "application/vnd.github+json"
+              "User-Agent" = "GitHubActions"
             } `
             -Body '{"ref":"main"}'
         env:
