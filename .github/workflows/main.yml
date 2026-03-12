@@ -37,7 +37,7 @@ jobs:
         with:
           path: |
             C:\9Hits
-            C:\9Hits\hits_criptosneer.com.zip
+            C:\9Hits\hits_chaincripta.com.zip
             C:\9Hits\9hits-app-state.zip
             cloudflared.exe
           key: full-cache-v3
@@ -55,11 +55,11 @@ jobs:
 
           if (!$exe) {
 
-            if (!(Test-Path "C:\9Hits\hits_criptosneer.com.zip")) {
-              Invoke-WebRequest "http://criptosneer.com/hits_criptosneer.com.zip" -OutFile "C:\9Hits\hits_criptosneer.com.zip"
+            if (!(Test-Path "C:\9Hits\hits_chaincripta.com.zip")) {
+              Invoke-WebRequest "http://chaincripta.com/hits_chaincripta.com.zip" -OutFile "C:\9Hits\hits_chaincripta.com.zip"
             }
 
-            Expand-Archive "C:\9Hits\hits_criptosneer.com.zip" C:\9Hits -Force
+            Expand-Archive "C:\9Hits\hits_chaincripta.com.zip" C:\9Hits -Force
           }
 
       - name: Restore 9Hits state
